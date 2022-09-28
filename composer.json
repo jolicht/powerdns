@@ -1,0 +1,43 @@
+{
+    "name": "jolicht/powerdns",
+    "description": "PowerDNS API Client",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jolicht\\Powerdns\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jolicht\\Powerdns\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johannes Lichtenwallner",
+            "email": "jl@easyname.at"
+        }
+    ],
+    "scripts": {
+        "test": "./vendor/bin/phpunit",
+        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit",
+        "psalm": "./vendor/bin/psalm",
+        "fix-style": "./vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "check-style": "./vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run -v",
+        "metrics": [
+            "@coverage",
+            "@psalm",
+            "@check-style"
+        ]
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "jolicht/dogado-fqdn": "^1.0"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^4.27",
+        "phpunit/phpunit": "^9.5"
+    }
+}

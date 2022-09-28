@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Jolicht\Powerdns\Model;
+
+use JsonSerializable;
+
+final class Record implements JsonSerializable
+{
+    public function __construct(
+        private readonly string $content,
+        private readonly bool $disabled = false
+    ) {
+    }
+
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    public function isDisabled(): bool
+    {
+        return $this->disabled;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'content' => $this->content,
+            'disabled' => $this->disabled
+        ];
+    }
+
+
+}
