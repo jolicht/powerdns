@@ -6,8 +6,10 @@ namespace Jolicht\Powerdns\Tests\Integration;
 
 use Jolicht\Powerdns\Api\CreateZone;
 use Jolicht\Powerdns\Api\DeleteZone;
+use Jolicht\Powerdns\Api\GetZone;
 use Jolicht\Powerdns\Api\HttpCreateZone;
 use Jolicht\Powerdns\Api\HttpDeleteZone;
+use Jolicht\Powerdns\Api\HttpGetZone;
 use Jolicht\Powerdns\Dto\CreateZoneDto;
 use Jolicht\Powerdns\Model\Record;
 use Jolicht\Powerdns\Model\RecordSet;
@@ -24,40 +26,20 @@ use Jolicht\Powerdns\ValueObject\ZoneName;
 /**
  * @coversNothing
  */
-final class CreateZoneTest extends HttpApiTestCase
+final class GetZoneTest extends HttpApiTestCase
 {
     private CreateZone $createZone;
     private DeleteZone $deleteZone;
+    private GetZone $getZone;
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->createZone = new HttpCreateZone($this->httpClient);
         $this->deleteZone = new HttpDeleteZone($this->httpClient);
+        $this->getZone = new HttpGetZone($this->httpClient);
 
         $this->cleanUp();
-    }
-
-    public function tearDown(): void
-    {
-        $this->cleanUp();
-    }
-
-    public function testCreateZoneWithMinimumParametersReturnsCreatedZone(): void
-    {
-        $createZoneDto = new CreateZoneDto(
-            ZoneName::fromString('example.at.'),
-            Kind::NATIVE,
-        );
-        $zone = $this->createZone->__invoke($createZoneDto);
-
-        $this->assertSame('example.at.', $zone->getId()->toString());
-        $this->assertSame('example.at.', $zone->getName()->toString());
-        $this->assertSame(Kind::NATIVE, $zone->getKind());
-        $this->assertSame('/api/v1/servers/localhost/zones/example.at.', $zone->getUrl());
-        $this->assertIsInt($zone->getSerial());
-        $this->assertFalse($zone->isDnssecSigned());
-        $this->assertNull($zone->getNsec3Param());
     }
 
     public function testCreateZoneReturnsCreatedZone(): void
@@ -83,7 +65,9 @@ final class CreateZoneTest extends HttpApiTestCase
                 ),
             ]
         );
-        $zone = $this->createZone->__invoke($createZoneDto);
+        $this->createZone->__invoke($createZoneDto);
+
+        $zone = $this->getZone->__invoke(ZoneId::fromString('example.at.'));
 
         $this->assertSame('example.at.', $zone->getId()->toString());
         $this->assertSame('example.at.', $zone->getName()->toString());
@@ -114,6 +98,11 @@ final class CreateZoneTest extends HttpApiTestCase
         ]);
 
         $this->assertEquals($expectedNsRecordSet, $recordSets[2]);
+    }
+
+    public function tearDown(): void
+    {
+        $this->cleanUp();
     }
 
     private function cleanUp()

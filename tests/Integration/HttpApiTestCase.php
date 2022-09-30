@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Jolicht\Powerdns\Tests\Integration;
 
+use function getenv;
+
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-
-use function getenv;
 
 abstract class HttpApiTestCase extends TestCase
 {
