@@ -1,7 +1,7 @@
 {
     "name": "jolicht/powerdns",
     "description": "PowerDNS API Client",
-    "type": "library",
+    "type": "symfony-bundle",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -20,8 +20,9 @@
         }
     ],
     "scripts": {
-        "test": "./vendor/bin/phpunit",
-        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit",
+        "test": "./vendor/bin/phpunit --testsuite UnitTests",
+        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --testsuite UnitTests",
+        "integration": "./vendor/bin/phpunit --testsuite IntegrationTests",
         "psalm": "./vendor/bin/psalm",
         "fix-style": "./vendor/bin/php-cs-fixer fix --allow-risky=yes",
         "check-style": "./vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run -v",
@@ -34,10 +35,14 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.1",
-        "jolicht/dogado-fqdn": "^1.0"
+        "jolicht/dogado-fqdn": "^1.0",
+        "symfony/http-client-contracts": "^3.1",
+        "symfony/framework-bundle": "^6.1"
     },
     "require-dev": {
         "vimeo/psalm": "^4.27",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "symfony/http-client": "^6.1",
+        "friendsofphp/php-cs-fixer": "^3.11"
     }
 }

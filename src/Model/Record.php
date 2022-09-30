@@ -24,13 +24,19 @@ final class Record implements JsonSerializable
         return $this->disabled;
     }
 
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            content: (string) $data['content'],
+            disabled: (bool) $data['disabled']
+        );
+    }
+
     public function jsonSerialize(): array
     {
         return [
             'content' => $this->content,
-            'disabled' => $this->disabled
+            'disabled' => $this->disabled,
         ];
     }
-
-
 }
