@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns;
+namespace Jolicht\PowerdnsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

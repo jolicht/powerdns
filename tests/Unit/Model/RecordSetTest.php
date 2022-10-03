@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\Model;
+namespace Jolicht\PowerdnsBundle\Tests\Unit\Model;
 
-use Jolicht\Powerdns\Model\Record;
-use Jolicht\Powerdns\Model\RecordSet;
-use Jolicht\Powerdns\ValueObject\RecordSetName;
-use Jolicht\Powerdns\ValueObject\Type;
+use Jolicht\PowerdnsBundle\Model\Record;
+use Jolicht\PowerdnsBundle\Model\RecordSet;
+use Jolicht\PowerdnsBundle\ValueObject\RecordSetName;
+use Jolicht\PowerdnsBundle\ValueObject\Type;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jolicht\Powerdns\Model\RecordSet
+ * @covers \Jolicht\PowerdnsBundle\Model\RecordSet
  */
 class RecordSetTest extends TestCase
 {

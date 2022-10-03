@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Model;
+namespace Jolicht\PowerdnsBundle\Model;
 
 use JsonSerializable;
 

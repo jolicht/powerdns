@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\Api;
+namespace Jolicht\PowerdnsBundle\Tests\Unit\Api;
 
 use InvalidArgumentException;
-use Jolicht\Powerdns\Api\HttpDeleteZone;
-use Jolicht\Powerdns\ValueObject\HttpStatusCode;
-use Jolicht\Powerdns\ValueObject\ZoneId;
+use Jolicht\PowerdnsBundle\Api\HttpDeleteZone;
+use Jolicht\PowerdnsBundle\ValueObject\HttpStatusCode;
+use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
 use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
- * @covers \Jolicht\Powerdns\Api\HttpDeleteZone
+ * @covers \Jolicht\PowerdnsBundle\Api\HttpDeleteZone
  */
 class HttpDeleteZoneTest extends TestCase
 {

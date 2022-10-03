@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\Service;
+namespace Jolicht\PowerdnsBundle\Tests\Unit\Service;
 
-use Jolicht\Powerdns\Service\RandomSalt;
+use Jolicht\PowerdnsBundle\Service\RandomSalt;
 use PHPUnit\Framework\TestCase;
 
 use function strlen;
 
 /**
- * @covers \Jolicht\Powerdns\Service\RandomSalt
+ * @covers \Jolicht\PowerdnsBundle\Service\RandomSalt
  */
 class RandomSaltTest extends TestCase
 {

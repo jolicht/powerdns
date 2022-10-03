@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\ValueObject;
+namespace Jolicht\PowerdnsBundle\ValueObject;
 
 use function explode;
 
-use Jolicht\Powerdns\ValueObject\Nsec3\HashAlgorithm;
+use Jolicht\PowerdnsBundle\ValueObject\Nsec3\HashAlgorithm;
 use Stringable;
 
 use function vsprintf;

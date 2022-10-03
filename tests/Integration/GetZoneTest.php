@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Integration;
+namespace Jolicht\PowerdnsBundle\Tests\Integration;
 
-use Jolicht\Powerdns\Api\CreateZone;
-use Jolicht\Powerdns\Api\DeleteZone;
-use Jolicht\Powerdns\Api\GetZone;
-use Jolicht\Powerdns\Api\HttpCreateZone;
-use Jolicht\Powerdns\Api\HttpDeleteZone;
-use Jolicht\Powerdns\Api\HttpGetZone;
-use Jolicht\Powerdns\Dto\CreateZoneDto;
-use Jolicht\Powerdns\Model\Record;
-use Jolicht\Powerdns\Model\RecordSet;
-use Jolicht\Powerdns\Service\RandomSalt;
-use Jolicht\Powerdns\ValueObject\Kind;
-use Jolicht\Powerdns\ValueObject\Nameserver;
-use Jolicht\Powerdns\ValueObject\Nsec3\HashAlgorithm;
-use Jolicht\Powerdns\ValueObject\Nsec3Param;
-use Jolicht\Powerdns\ValueObject\RecordSetName;
-use Jolicht\Powerdns\ValueObject\Type;
-use Jolicht\Powerdns\ValueObject\ZoneId;
-use Jolicht\Powerdns\ValueObject\ZoneName;
+use Jolicht\PowerdnsBundle\Api\CreateZone;
+use Jolicht\PowerdnsBundle\Api\DeleteZone;
+use Jolicht\PowerdnsBundle\Api\GetZone;
+use Jolicht\PowerdnsBundle\Api\HttpCreateZone;
+use Jolicht\PowerdnsBundle\Api\HttpDeleteZone;
+use Jolicht\PowerdnsBundle\Api\HttpGetZone;
+use Jolicht\PowerdnsBundle\Dto\CreateZoneDto;
+use Jolicht\PowerdnsBundle\Model\Record;
+use Jolicht\PowerdnsBundle\Model\RecordSet;
+use Jolicht\PowerdnsBundle\Service\RandomSalt;
+use Jolicht\PowerdnsBundle\ValueObject\Kind;
+use Jolicht\PowerdnsBundle\ValueObject\Nameserver;
+use Jolicht\PowerdnsBundle\ValueObject\Nsec3\HashAlgorithm;
+use Jolicht\PowerdnsBundle\ValueObject\Nsec3Param;
+use Jolicht\PowerdnsBundle\ValueObject\RecordSetName;
+use Jolicht\PowerdnsBundle\ValueObject\Type;
+use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
+use Jolicht\PowerdnsBundle\ValueObject\ZoneName;
 
 /**
  * @coversNothing

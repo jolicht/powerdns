@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\ValueObject\_files;
+namespace Jolicht\PowerdnsBundle\Tests\Unit\ValueObject\_files;
 
-use Jolicht\Powerdns\ValueObject\FullyQualifiedDomainName;
+use Jolicht\PowerdnsBundle\ValueObject\FullyQualifiedDomainName;
 
 final class ConcreteFullyQualifiedDomainName extends FullyQualifiedDomainName
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\Api;
+namespace Jolicht\PowerdnsBundle\Tests\Unit\Api;
 
 use InvalidArgumentException;
-use Jolicht\Powerdns\Api\HttpGetZone;
-use Jolicht\Powerdns\Model\Zone;
-use Jolicht\Powerdns\ValueObject\ZoneId;
+use Jolicht\PowerdnsBundle\Api\HttpGetZone;
+use Jolicht\PowerdnsBundle\Model\Zone;
+use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
 
 use function json_encode;
 
@@ -16,7 +16,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
- * @covers \Jolicht\Powerdns\Api\HttpGetZone
+ * @covers \Jolicht\PowerdnsBundle\Api\HttpGetZone
  */
 class HttpGetZoneTest extends TestCase
 {

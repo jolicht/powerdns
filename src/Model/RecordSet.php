@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Model;
+namespace Jolicht\PowerdnsBundle\Model;
 
 use function array_map;
 
-use Jolicht\Powerdns\ValueObject\RecordSetName;
-use Jolicht\Powerdns\ValueObject\Type;
+use Jolicht\PowerdnsBundle\ValueObject\RecordSetName;
+use Jolicht\PowerdnsBundle\ValueObject\Type;
 use JsonSerializable;
 use Webmozart\Assert\Assert;
 

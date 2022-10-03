@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\Dto;
+namespace Jolicht\PowerdnsBundle\Tests\Unit\Dto;
 
-use Jolicht\Powerdns\Dto\CreateZoneDto;
-use Jolicht\Powerdns\Model\RecordSet;
-use Jolicht\Powerdns\ValueObject\Kind;
-use Jolicht\Powerdns\ValueObject\Nameserver;
-use Jolicht\Powerdns\ValueObject\Nsec3\HashAlgorithm;
-use Jolicht\Powerdns\ValueObject\Nsec3Param;
-use Jolicht\Powerdns\ValueObject\RecordSetName;
-use Jolicht\Powerdns\ValueObject\Type;
-use Jolicht\Powerdns\ValueObject\ZoneName;
+use Jolicht\PowerdnsBundle\Dto\CreateZoneDto;
+use Jolicht\PowerdnsBundle\Model\RecordSet;
+use Jolicht\PowerdnsBundle\ValueObject\Kind;
+use Jolicht\PowerdnsBundle\ValueObject\Nameserver;
+use Jolicht\PowerdnsBundle\ValueObject\Nsec3\HashAlgorithm;
+use Jolicht\PowerdnsBundle\ValueObject\Nsec3Param;
+use Jolicht\PowerdnsBundle\ValueObject\RecordSetName;
+use Jolicht\PowerdnsBundle\ValueObject\Type;
+use Jolicht\PowerdnsBundle\ValueObject\ZoneName;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jolicht\Powerdns\Dto\CreateZoneDto
+ * @covers \Jolicht\PowerdnsBundle\Dto\CreateZoneDto
  */
 class CreateZoneDtoTest extends TestCase
 {

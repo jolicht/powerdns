@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\Powerdns\Tests\Unit\Model;
+namespace Jolicht\PowerdnsBundle\Tests\Unit\Model;
 
-use Jolicht\Powerdns\Model\Record;
+use Jolicht\PowerdnsBundle\Model\Record;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jolicht\Powerdns\Model\Record
+ * @covers \Jolicht\PowerdnsBundle\Model\Record
  */
 class RecordTest extends TestCase
 {
