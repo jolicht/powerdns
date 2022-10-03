@@ -22,10 +22,10 @@ final class CreateZoneDto implements JsonSerializable
     public function __construct(
         private readonly ZoneName $name,
         private readonly Kind $kind,
+        private readonly array $recordSets = [],
         private readonly array $nameservers = [],
         private readonly bool $dnssecSigned = false,
         private readonly ?Nsec3Param $nsec3Param = null,
-        private readonly array $recordSets = []
     ) {
         Assert::allIsInstanceOf($this->nameservers, Nameserver::class);
         Assert::allIsInstanceOf($this->recordSets, RecordSet::class);

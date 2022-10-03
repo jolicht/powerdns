@@ -28,16 +28,16 @@ class CreateZoneDtoTest extends TestCase
             ZoneName::fromString('example.at.'),
             Kind::NATIVE,
             [
+                new RecordSet(RecordSetName::fromString('www.example.at.'), Type::A, 1800, []),
+            ],
+            [
                 Nameserver::fromString('ns1.test.at.'),
                 Nameserver::fromString('ns2.test.at.'),
             ],
             true,
             new Nsec3Param(
                 HashAlgorithm::SHA1, 0, 2
-            ),
-            [
-                new RecordSet(RecordSetName::fromString('www.example.at.'), Type::A, 1800, []),
-            ]
+            )
         );
     }
 
