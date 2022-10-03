@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Api;
+namespace Jolicht\Powerdns\Api;
 
-use Jolicht\PowerdnsBundle\Model\Zone;
-use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
+use Jolicht\Powerdns\Model\Zone;
+use Jolicht\Powerdns\ValueObject\ZoneId;
 
 interface GetZone
 {

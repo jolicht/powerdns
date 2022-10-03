@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Service;
+namespace Jolicht\Powerdns\Service;
 
 use function bin2hex;
 use function random_bytes;

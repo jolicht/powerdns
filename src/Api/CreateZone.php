@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Api;
+namespace Jolicht\Powerdns\Api;
 
-use Jolicht\PowerdnsBundle\Dto\CreateZoneDto;
-use Jolicht\PowerdnsBundle\Model\Zone;
+use Jolicht\Powerdns\Dto\CreateZoneDto;
+use Jolicht\Powerdns\Model\Zone;
 
 interface CreateZone
 {

@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Tests\Unit\Model;
+namespace Jolicht\Powerdns\Tests\Unit\Model;
 
-use Jolicht\PowerdnsBundle\Model\RecordSet;
-use Jolicht\PowerdnsBundle\Model\Zone;
-use Jolicht\PowerdnsBundle\ValueObject\Kind;
-use Jolicht\PowerdnsBundle\ValueObject\Nsec3\HashAlgorithm;
-use Jolicht\PowerdnsBundle\ValueObject\Nsec3Param;
-use Jolicht\PowerdnsBundle\ValueObject\RecordSetName;
-use Jolicht\PowerdnsBundle\ValueObject\Type;
-use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
-use Jolicht\PowerdnsBundle\ValueObject\ZoneName;
+use Jolicht\Powerdns\Model\RecordSet;
+use Jolicht\Powerdns\Model\Zone;
+use Jolicht\Powerdns\ValueObject\Kind;
+use Jolicht\Powerdns\ValueObject\Nsec3\HashAlgorithm;
+use Jolicht\Powerdns\ValueObject\Nsec3Param;
+use Jolicht\Powerdns\ValueObject\RecordSetName;
+use Jolicht\Powerdns\ValueObject\Type;
+use Jolicht\Powerdns\ValueObject\ZoneId;
+use Jolicht\Powerdns\ValueObject\ZoneName;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Jolicht\PowerdnsBundle\Model\Zone
+ * @covers \Jolicht\Powerdns\Model\Zone
  */
 class ZoneTest extends TestCase
 {

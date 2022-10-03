@@ -1,6 +1,6 @@
-# PowerdnsBundle
+# Powerdns Api Client
 
-Bundle to use PowerDNS-Api.
+Library to use PowerDNS-Api.
 
 ## Installation
 

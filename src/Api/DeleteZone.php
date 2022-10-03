@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Api;
+namespace Jolicht\Powerdns\Api;
 
-use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
+use Jolicht\Powerdns\ValueObject\ZoneId;
 
 interface DeleteZone
 {

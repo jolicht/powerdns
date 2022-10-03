@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Tests\Integration;
+namespace Jolicht\Powerdns\Tests\Integration;
 
 use function getenv;
 

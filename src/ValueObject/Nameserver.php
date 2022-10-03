@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\ValueObject;
+namespace Jolicht\Powerdns\ValueObject;
 
 final class Nameserver extends FullyQualifiedDomainName
 {

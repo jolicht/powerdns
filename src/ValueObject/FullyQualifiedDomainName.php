@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\ValueObject;
+namespace Jolicht\Powerdns\ValueObject;
 
 use function rtrim;
 use function str_starts_with;

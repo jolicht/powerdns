@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Api;
+namespace Jolicht\Powerdns\Api;
 
 use InvalidArgumentException;
 
 use function is_array;
 
-use Jolicht\PowerdnsBundle\Dto\CreateZoneDto;
-use Jolicht\PowerdnsBundle\Model\Zone;
+use Jolicht\Powerdns\Dto\CreateZoneDto;
+use Jolicht\Powerdns\Model\Zone;
 
 use function json_decode;
 

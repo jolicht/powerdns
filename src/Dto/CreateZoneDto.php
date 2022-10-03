@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Dto;
+namespace Jolicht\Powerdns\Dto;
 
 use function array_map;
 
-use Jolicht\PowerdnsBundle\Model\RecordSet;
-use Jolicht\PowerdnsBundle\ValueObject\Kind;
-use Jolicht\PowerdnsBundle\ValueObject\Nameserver;
-use Jolicht\PowerdnsBundle\ValueObject\Nsec3Param;
-use Jolicht\PowerdnsBundle\ValueObject\ZoneName;
+use Jolicht\Powerdns\Model\RecordSet;
+use Jolicht\Powerdns\ValueObject\Kind;
+use Jolicht\Powerdns\ValueObject\Nameserver;
+use Jolicht\Powerdns\ValueObject\Nsec3Param;
+use Jolicht\Powerdns\ValueObject\ZoneName;
 use JsonSerializable;
 use Webmozart\Assert\Assert;
 

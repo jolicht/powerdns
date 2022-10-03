@@ -1,16 +1,16 @@
 {
-    "name": "jolicht/powerdns-bundle",
+    "name": "jolicht/powerdns",
     "description": "PowerDNS API Client",
-    "type": "symfony-bundle",
+    "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Jolicht\\PowerdnsBundle\\": "src/"
+            "Jolicht\\Powerdns\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jolicht\\PowerdnsBundle\\Tests\\": "tests/"
+            "Jolicht\\Powerdns\\Tests\\": "tests/"
         }
     },
     "authors": [

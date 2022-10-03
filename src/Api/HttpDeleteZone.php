@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Api;
+namespace Jolicht\Powerdns\Api;
 
 use function in_array;
 
 use InvalidArgumentException;
-use Jolicht\PowerdnsBundle\ValueObject\HttpStatusCode;
-use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
+use Jolicht\Powerdns\ValueObject\HttpStatusCode;
+use Jolicht\Powerdns\ValueObject\ZoneId;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final class HttpDeleteZone implements DeleteZone

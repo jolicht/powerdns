@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Jolicht\PowerdnsBundle\Model;
+namespace Jolicht\Powerdns\Model;
 
 use function array_map;
 
-use Jolicht\PowerdnsBundle\ValueObject\Kind;
-use Jolicht\PowerdnsBundle\ValueObject\Nsec3Param;
-use Jolicht\PowerdnsBundle\ValueObject\ZoneId;
-use Jolicht\PowerdnsBundle\ValueObject\ZoneName;
+use Jolicht\Powerdns\ValueObject\Kind;
+use Jolicht\Powerdns\ValueObject\Nsec3Param;
+use Jolicht\Powerdns\ValueObject\ZoneId;
+use Jolicht\Powerdns\ValueObject\ZoneName;
 use Webmozart\Assert\Assert;
 
 final class Zone
