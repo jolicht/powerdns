@@ -1,5 +1,5 @@
 {
-    "name": "jolicht/powerdns",
+    "name": "jolicht/powerdns-bundle",
     "description": "PowerDNS API Client",
     "type": "symfony-bundle",
     "license": "MIT",
