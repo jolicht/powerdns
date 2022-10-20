@@ -6,12 +6,14 @@ namespace Jolicht\Powerdns\Tests\Unit\Api;
 
 use InvalidArgumentException;
 use Jolicht\Powerdns\Api\HttpGetZone;
+use Jolicht\Powerdns\Exception\InternalServerErrorException;
 use Jolicht\Powerdns\Model\Zone;
 use Jolicht\Powerdns\ValueObject\ZoneId;
 
 use function json_encode;
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -57,6 +59,10 @@ class HttpGetZoneTest extends TestCase
             ->method('getContent')
             ->willReturn($zoneContent);
 
+        $response
+            ->method('getStatusCode')
+            ->willReturn(Response::HTTP_OK);
+
         $zone = $this->getZone->__invoke(ZoneId::fromString('test.at.'));
         $this->assertInstanceOf(Zone::class, $zone);
     }
@@ -78,7 +84,37 @@ class HttpGetZoneTest extends TestCase
             ->method('getContent')
             ->willReturn('invalid');
 
+        $response
+            ->method('getStatusCode')
+            ->willReturn(Response::HTTP_OK);
+
         $this->expectException(InvalidArgumentException::class);
+
+        $zone = $this->getZone->__invoke(ZoneId::fromString('test.at.'));
+    }
+
+    public function testInvokeErrorStatusCodeThrowsException(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+
+        $this->client
+            ->expects($this->once())
+            ->method('request')
+            ->with(
+                $this->identicalTo('GET'),
+                $this->identicalTo('zones/test.at.')
+            )
+            ->willReturn($response);
+
+        $response
+            ->method('getContent')
+            ->willReturn('[]');
+
+        $response
+            ->method('getStatusCode')
+            ->willReturn(Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        $this->expectException(InternalServerErrorException::class);
 
         $zone = $this->getZone->__invoke(ZoneId::fromString('test.at.'));
     }

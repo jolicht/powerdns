@@ -7,6 +7,7 @@ namespace Jolicht\Powerdns\Tests\Unit\Api;
 use InvalidArgumentException;
 use Jolicht\Powerdns\Api\HttpCreateZone;
 use Jolicht\Powerdns\Dto\CreateZoneDto;
+use Jolicht\Powerdns\Exception\InternalServerErrorException;
 use Jolicht\Powerdns\Model\Zone;
 use Jolicht\Powerdns\ValueObject\Kind;
 use Jolicht\Powerdns\ValueObject\ZoneName;
@@ -14,6 +15,7 @@ use Jolicht\Powerdns\ValueObject\ZoneName;
 use function json_encode;
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -31,7 +33,7 @@ class HttpCreateZoneTest extends TestCase
         $this->createZone = new HttpCreateZone($this->client);
     }
 
-    public function testInvoke(): void
+    public function testInvokeReturnsCreatedZone(): void
     {
         $response = $this->createMock(ResponseInterface::class);
 
@@ -58,6 +60,10 @@ class HttpCreateZoneTest extends TestCase
             ->method('getContent')
             ->willReturn($zoneContent);
 
+        $response
+            ->method('getStatusCode')
+            ->willReturn(Response::HTTP_CREATED);
+
         $createZoneDto = new CreateZoneDto(
             ZoneName::fromString('example.at.'),
             Kind::NATIVE,
@@ -82,12 +88,42 @@ class HttpCreateZoneTest extends TestCase
             ->method('getContent')
             ->willReturn('invalid');
 
+        $response
+            ->method('getStatusCode')
+            ->willReturn(Response::HTTP_CREATED);
+
         $createZoneDto = new CreateZoneDto(
             ZoneName::fromString('example.at.'),
             Kind::NATIVE,
         );
 
         $this->expectException(InvalidArgumentException::class);
+
+        $this->createZone->__invoke($createZoneDto);
+    }
+
+    public function testInvokeErrorStatusCodeThrowsException(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+
+        $this->client
+            ->method('request')
+            ->willReturn($response);
+
+        $response
+            ->method('getContent')
+            ->willReturn('[]');
+
+        $response
+            ->method('getStatusCode')
+            ->willReturn(Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        $createZoneDto = new CreateZoneDto(
+            ZoneName::fromString('example.at.'),
+            Kind::NATIVE,
+        );
+
+        $this->expectException(InternalServerErrorException::class);
 
         $this->createZone->__invoke($createZoneDto);
     }

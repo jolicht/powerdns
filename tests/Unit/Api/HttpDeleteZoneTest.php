@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Jolicht\Powerdns\Tests\Unit\Api;
 
-use InvalidArgumentException;
 use Jolicht\Powerdns\Api\HttpDeleteZone;
-use Jolicht\Powerdns\ValueObject\HttpStatusCode;
+use Jolicht\Powerdns\Exception\InternalServerErrorException;
 use Jolicht\Powerdns\ValueObject\ZoneId;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -40,12 +40,12 @@ class HttpDeleteZoneTest extends TestCase
 
         $response
             ->method('getStatusCode')
-            ->willReturn(HttpStatusCode::HTTP_NO_CONTENT->value);
+            ->willReturn(Response::HTTP_NO_CONTENT);
 
         $this->deleteZone->__invoke(ZoneId::fromString('test.at.'));
     }
 
-    public function testInvokeInvalidResponseCodeThrowsInvalidArgumentException(): void
+    public function testInvokeInvalidResponseCodeThrowsException(): void
     {
         $response = $this->createMock(ResponseInterface::class);
 
@@ -61,7 +61,7 @@ class HttpDeleteZoneTest extends TestCase
             ->method('getStatusCode')
             ->willReturn(500);
 
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(InternalServerErrorException::class);
 
         $this->deleteZone->__invoke(ZoneId::fromString('test.at.'));
     }

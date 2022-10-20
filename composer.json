@@ -10,7 +10,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Jolicht\\Powerdns\\Tests\\": "tests/"
+            "Jolicht\\Powerdns\\Tests\\Unit\\": "tests/Unit/",
+            "Jolicht\\Powerdns\\Tests\\Integration\\\\": "tests/Integration/"
         }
     },
     "authors": [

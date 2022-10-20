@@ -107,6 +107,9 @@ final class GetZoneTest extends HttpApiTestCase
 
     private function cleanUp()
     {
-        $this->deleteZone->__invoke(ZoneId::fromString('example.at.'));
+        try {
+            $this->deleteZone->__invoke(ZoneId::fromString('example.at.'));
+        } catch (\Throwable) {
+        }
     }
 }
